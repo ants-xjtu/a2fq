@@ -1,0 +1,42 @@
+# platform-related parameters
+readonly kvm_cpu="72"
+readonly kvm_node="3"
+readonly kvm_mem="180GB"
+readonly use_hugepage="no"
+
+# bmv2-related parameters
+readonly nb_ingress_threads="64"
+readonly nb_egress_threads="64"
+readonly input_buffer_type="pgy"
+readonly pgy_input_buffer="10"
+readonly use_output_buffer="no"
+readonly reduce_code="yes"
+
+# network-related parameters
+readonly link_bandwidth="5"        # Mbps
+readonly link_delay="0"      # link propagation delay
+readonly queues_per_port="8"
+readonly len_per_queue="64"
+readonly shared_buffer_size="100KB" # Bytes
+readonly dt_alpha="1"
+readonly bytes_per_round="2048"   # Bytes
+readonly count_min_sketch_size="4X4096"
+readonly a2fq_beta="0.4"
+readonly a2fq_gamma="0.7"
+
+# topology-related parameters
+readonly topo_type="dumbbell"
+readonly dumbbell_pairs="5"       # Flow amounts [4, 20]
+
+# experiment-related parameters
+readonly exp_platform="sugon_kvm"  # virtualbox | sugon_kvm
+exp_data_dir="../../data/conv_udp_dumbbell_${exp_platform}"
+readonly exp_data_dir=${exp_data_dir}"/$(date +'%Y%m%d_%H%M%S')"
+readonly exp_projects=("../../projects/A2FQ" "../../projects/AFQ")
+#readonly exp_projects=("../../projects/basic")
+readonly server_data_prefix="server_"
+readonly client_data_prefix="client_"
+
+readonly flow_enter_interval="10"   # sec
+readonly iperf_test_gap="0.5"       # sec
+readonly udp_bandwidth="5M"         # Mbps

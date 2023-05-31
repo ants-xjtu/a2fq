@@ -1,0 +1,30 @@
+# bmv2-related parameters
+# readonly nb_ingress_threads="64"
+# readonly nb_egress_threads="64"
+# readonly input_buffer_type="pgy"
+# readonly pgy_input_buffer="1024"
+# readonly use_output_buffer="no"
+# readonly reduce_code="yes"
+
+# network-related parameters
+readonly link_bandwidth="10.0"        # Mbps
+readonly link_delay="50.0ms"      # link propagation delay
+readonly queues_per_port="16"
+readonly shared_buffer_size="1MB" # Bytes
+readonly dt_alpha="1"
+readonly bytes_per_round="2048"   # Bytes
+readonly count_min_sketch_size="4X4096"
+
+# topology-related parameters
+readonly topo_type="dumbbell"
+readonly dumbbell_pairs="4"
+
+# experiment-related parameters
+exp_data_dir="../../data2/iperf_test"
+readonly exp_data_dir=${exp_data_dir}"/$(date +'%Y%m%d_%H%M%S')"
+readonly exp_projects=("../../projects/AFQ")
+
+readonly mininet_wait="40"          # sec
+readonly iperf_test_gap="1.0"       # sec
+readonly iperf_total_time="20"      # sec
+readonly iperf_udp_bandwith="10M"   # Mbps
